@@ -35,6 +35,93 @@
         border-radius: 16px;
         border: 1px solid rgba(104, 48, 145, 0.15);
         box-shadow: 0 8px 32px rgba(104, 48, 145, 0.08);
+        position: relative;
+        overflow: hidden;
+      }
+      /* Confetti background */
+      .confetti-bg {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        border-radius: 16px;
+      }
+      .confetti-piece {
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        top: 0;
+        animation: confetti-fall 6s linear infinite;
+        opacity: 0.9;
+      }
+      .confetti-piece.rect {
+        width: 8px;
+        height: 14px;
+      }
+      .confetti-piece.circle {
+        border-radius: 50%;
+      }
+      /* Stagger starting position so confetti fills the whole div */
+      .confetti-piece.row1 { top: 0; }
+      .confetti-piece.row2 { top: 25%; }
+      .confetti-piece.row3 { top: 50%; }
+      .confetti-piece.row4 { top: 75%; }
+      .confetti-piece.row5 { top: -20%; animation-delay: -1s; }
+      .confetti-piece.row6 { top: -40%; animation-delay: -2.5s; }
+      @keyframes confetti-fall {
+        0% {
+          transform: translateY(0) rotate(0deg) translateX(0);
+          opacity: 0.9;
+        }
+        25% {
+          transform: translateY(200px) rotate(180deg) translateX(5px);
+        }
+        50% {
+          transform: translateY(400px) rotate(360deg) translateX(-3px);
+        }
+        75% {
+          transform: translateY(600px) rotate(540deg) translateX(4px);
+        }
+        100% {
+          transform: translateY(800px) rotate(720deg) translateX(0);
+          opacity: 0.7;
+        }
+      }
+      .confetti-piece.c1 { background: #683091; }
+      .confetti-piece.c2 { background: #8b5cf6; }
+      .confetti-piece.c3 { background: #8bc643; }
+      .confetti-piece.c4 { background: #f59e0b; }
+      .confetti-piece.c5 { background: #ec4899; }
+      .confetti-piece.c6 { background: #06b6d4; }
+      .confetti-piece.c7 { background: #f43f5e; }
+      .confetti-piece.c8 { background: #a855f7; }
+      .confetti-piece.p1 { left: 3%; animation-delay: 0s; }
+      .confetti-piece.p2 { left: 12%; animation-delay: 0.8s; }
+      .confetti-piece.p3 { left: 22%; animation-delay: 1.6s; }
+      .confetti-piece.p4 { left: 35%; animation-delay: 0.3s; }
+      .confetti-piece.p5 { left: 48%; animation-delay: 2.1s; }
+      .confetti-piece.p6 { left: 58%; animation-delay: 0.6s; }
+      .confetti-piece.p7 { left: 68%; animation-delay: 1.2s; }
+      .confetti-piece.p8 { left: 78%; animation-delay: 1.9s; }
+      .confetti-piece.p9 { left: 88%; animation-delay: 0.4s; }
+      .confetti-piece.p10 { left: 95%; animation-delay: 2.4s; }
+      .confetti-piece.p11 { left: 8%; animation-delay: 2.8s; }
+      .confetti-piece.p12 { left: 18%; animation-delay: 3.2s; }
+      .confetti-piece.p13 { left: 28%; animation-delay: 2.5s; }
+      .confetti-piece.p14 { left: 42%; animation-delay: 3.5s; }
+      .confetti-piece.p15 { left: 52%; animation-delay: 2.2s; }
+      .confetti-piece.p16 { left: 62%; animation-delay: 3.8s; }
+      .confetti-piece.p17 { left: 72%; animation-delay: 2.9s; }
+      .confetti-piece.p18 { left: 82%; animation-delay: 3.1s; }
+      .confetti-piece.p19 { left: 92%; animation-delay: 4s; }
+      .confetti-piece.p20 { left: 5%; animation-delay: 4.2s; }
+      .confetti-piece.p21 { left: 25%; animation-delay: 4.5s; }
+      .confetti-piece.p22 { left: 45%; animation-delay: 4.1s; }
+      .confetti-piece.p23 { left: 65%; animation-delay: 4.3s; }
+      .confetti-piece.p24 { left: 85%; animation-delay: 4.6s; }
+      .new-release-section .new-release-badge,
+      .new-release-section .new-release-row {
+        position: relative;
+        z-index: 1;
       }
       .new-release-badge {
         display: inline-flex;
@@ -163,6 +250,32 @@
       <h1 class="ebook margin-20" style="text-align: center">ই-বুক</h1>
 
       <section class="ebook margin-20 new-release-section">
+        <div class="confetti-bg" aria-hidden="true">
+          <span class="confetti-piece c1 p1 row1 circle"></span>
+          <span class="confetti-piece c2 p2 row1 rect"></span>
+          <span class="confetti-piece c3 p3 row2 circle"></span>
+          <span class="confetti-piece c4 p4 row2"></span>
+          <span class="confetti-piece c5 p5 row3 circle"></span>
+          <span class="confetti-piece c6 p6 row3 rect"></span>
+          <span class="confetti-piece c7 p7 row4"></span>
+          <span class="confetti-piece c8 p8 row4 circle"></span>
+          <span class="confetti-piece c1 p9 row1 rect"></span>
+          <span class="confetti-piece c2 p10 row5"></span>
+          <span class="confetti-piece c3 p11 row5 circle"></span>
+          <span class="confetti-piece c4 p12 row2 rect"></span>
+          <span class="confetti-piece c5 p13 row3"></span>
+          <span class="confetti-piece c6 p14 row6 circle"></span>
+          <span class="confetti-piece c7 p15 row6 rect"></span>
+          <span class="confetti-piece c8 p16 row4"></span>
+          <span class="confetti-piece c1 p17 row1 circle"></span>
+          <span class="confetti-piece c2 p18 row5 rect"></span>
+          <span class="confetti-piece c3 p19 row2"></span>
+          <span class="confetti-piece c4 p20 row3 circle"></span>
+          <span class="confetti-piece c5 p21 row6 rect"></span>
+          <span class="confetti-piece c6 p22 row4"></span>
+          <span class="confetti-piece c7 p23 row5 circle"></span>
+          <span class="confetti-piece c8 p24 row6 rect"></span>
+        </div>
         <div class="new-release-badge">
           <i class="fas fa-star"></i>
           New Release · নিউ রিলিজ
