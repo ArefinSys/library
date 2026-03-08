@@ -23,9 +23,101 @@
         .book-grid {
           display: grid;
           grid-template-columns: 1fr 1fr 1fr;
-
           gap: 20px;
         }
+      }
+
+      /* New Release section */
+      .new-release-section {
+        margin-bottom: 2.5rem;
+        padding: 1.5rem;
+        background: linear-gradient(135deg, #f8f4ff 0%, #fff5f0 50%, #f0fff8 100%);
+        border-radius: 16px;
+        border: 1px solid rgba(104, 48, 145, 0.15);
+        box-shadow: 0 8px 32px rgba(104, 48, 145, 0.08);
+      }
+      .new-release-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+        padding: 0.5rem 1.25rem;
+        background: linear-gradient(135deg, #683091 0%, #8b5cf6 100%);
+        color: #fff;
+        font-weight: 700;
+        font-size: 1rem;
+        letter-spacing: 0.05em;
+        border-radius: 50px;
+        box-shadow: 0 4px 15px rgba(104, 48, 145, 0.4);
+        animation: badge-pulse 2s ease-in-out infinite;
+      }
+      .new-release-badge i {
+        animation: star-spin 3s linear infinite;
+      }
+      @keyframes badge-pulse {
+        0%, 100% { transform: scale(1); box-shadow: 0 4px 15px rgba(104, 48, 145, 0.4); }
+        50% { transform: scale(1.03); box-shadow: 0 6px 20px rgba(104, 48, 145, 0.5); }
+      }
+      @keyframes star-spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      .new-release-row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5rem;
+      }
+      .new-release-card {
+        text-align: center;
+        padding: 1.25rem;
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        animation: card-float 4s ease-in-out infinite;
+      }
+      .new-release-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 12px 40px rgba(104, 48, 145, 0.15);
+      }
+      @keyframes card-float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-4px); }
+      }
+      .new-release-card img {
+        max-width: 200px;
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        display: block;
+        margin: 0 auto 0.75rem;
+      }
+      .new-release-card p {
+        margin: 0.25rem 0;
+      }
+      .new-release-card a[href*="book13"] {
+        color: #683091;
+        font-weight: 600;
+      }
+      .new-release-card a[href*="book13"]:hover {
+        text-decoration: underline;
+      }
+      .new-release-keywords {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+        margin-top: 0.75rem;
+      }
+      .new-release-keywords span {
+        padding: 0.25rem 0.6rem;
+        background: rgba(104, 48, 145, 0.1);
+        color: #683091;
+        font-size: 0.8rem;
+        border-radius: 20px;
+        font-weight: 500;
       }
     </style>
   </head>
@@ -69,6 +161,31 @@
 
       <!--Content Here-->
       <h1 class="ebook margin-20" style="text-align: center">ই-বুক</h1>
+
+      <section class="ebook margin-20 new-release-section">
+        <div class="new-release-badge">
+          <i class="fas fa-star"></i>
+          New Release · নিউ রিলিজ
+        </div>
+        <div class="new-release-row">
+          <div class="new-release-card">
+            <p>
+              <a href="book13.html" target="_blank">
+                <img src="assets/books/ebook-cover.png" alt="গল্পে গল্পে জানা ও শেখার মজা" />
+              </a>
+            </p>
+            <p>
+              বইটি পড়তে <a href="ebook.html" target="_blank">এখানে ক্লিক করুন</a>
+            </p>
+            <div class="new-release-keywords">
+              <span>শিশুদের জন্য</span>
+              <span>শিক্ষামূলক গল্প</span>
+              <span>রীনা পারভীন</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section class="ebook margin-20 book-grid">
         <div>
           <p>
